@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Online Application</title>
+    <link rel="stylesheet" href="application.css">
+    <!-- Add Cropper.js library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" integrity="sha256-L49Upd8m1bDAI7X6oxqeaZS4KuUg2b0ozomQ+ZDh8uA=" crossorigin="anonymous" />
+</head>
+<body>
+
+    <h2>School Online Application</h2>
+
+    <form action="/submit" method="post" enctype="multipart/form-data">
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+        <img id="previewImage" alt="Uploaded Image" style="max-width: 100%; display: none;">
+
+        <!-- Add a container for Cropper.js -->
+        <div id="cropperContainer" style="display: none;">
+            <img id="croppedImage" alt="Cropped Image" style="max-width: 100%;">
+        </div>
+
+        <div class="name-container">
+            <div class="name-field">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="name-field">
+                <label for="lastName">Last Name (Surname):</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+        </div>
+
+        <div class="grade-container">
+            <label for="grade">Grade:</label>
+            <select id="grade" name="grade" required>
+                <optgroup label="Grades">
+                    <option value="R">Grade R</option>
+                    <option value="1">Grade 1</option>
+                    <option value="2">Grade 2</option>
+                    <option value="3">Grade 3</option>
+                    <option value="4">Grade 4</option>
+                    <option value="5">Grade 5</option>
+                    <option value="6">Grade 6</option>
+                    <option value="7">Grade 7</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="confirmEmail">Confirm Email:</label>
+        <input type="email" id="confirmEmail" name="confirmEmail" required>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <!-- Add Cropper.js script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js" integrity="sha256-oJS7Rbqg1byFZAtiPP2lNXcZ7A20iUc+UGC1+q7I7Mg=" crossorigin="anonymous"></script>
+    <script src="application.js"></script>
+</body>
+</html>
